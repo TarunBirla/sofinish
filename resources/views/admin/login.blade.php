@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login | Sofinish Technologies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <style>
@@ -36,7 +36,7 @@
         }
         .login-container {
             width: 100%;
-            max-width: 450px;
+            max-width: 440px;
         }
         .login-card {
             background: #ffffff;
@@ -166,24 +166,9 @@
             transform: translateY(-1px);
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
         }
-        .demo-cred-hint {
-            margin-top: 24px;
-            padding: 14px;
-            border-radius: 10px;
-            background: var(--blue-50);
-            border: 1px dashed #bfdbfe;
-            text-align: center;
-            font-size: 12.5px;
-            color: var(--gray-700);
-        }
-        .demo-cred-hint strong {
-            color: var(--blue-600);
-            cursor: pointer;
-            text-decoration: underline;
-        }
         .back-to-site {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 22px;
         }
         .back-to-site a {
             color: var(--gray-500);
@@ -206,7 +191,7 @@
                 <span>Sofin<span>ish</span></span>
             </a>
             <h2>Admin Control Center</h2>
-            <p>Access real-time analytics & visitor intelligence</p>
+            <p>Enter your credentials to access the dashboard</p>
         </div>
 
         @if(session('info'))
@@ -219,33 +204,50 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.login.post') }}" method="POST">
+        <form action="{{ route('admin.login.post') }}" method="POST" autocomplete="off">
             @csrf
 
             <div class="form-group">
-                <label class="form-label" for="email">Admin Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="admin@sofinish.co.uk" value="" required autofocus>
+                <label class="form-label" for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-control" 
+                    placeholder="Enter your email" 
+                    value="" 
+                    autocomplete="off" 
+                    required 
+                    autofocus
+                >
             </div>
 
             <div class="form-group">
                 <label class="form-label" for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" value="" required>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-control" 
+                    placeholder="Enter your password" 
+                    value="" 
+                    autocomplete="new-password" 
+                    required
+                >
             </div>
 
             <div class="form-meta">
                 <label class="remember-checkbox">
-                    <input type="checkbox" name="remember" value="1" checked>
-                    <span>Remember me</span>
+                    <input type="checkbox" name="remember" value="1">
+                    <span>Remember me on this device</span>
                 </label>
             </div>
 
             <button type="submit" class="btn-login">
-                <span>Sign in to Dashboard</span>
+                <span>Sign In</span>
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
         </form>
-
-        
     </div>
 
     <div class="back-to-site">
