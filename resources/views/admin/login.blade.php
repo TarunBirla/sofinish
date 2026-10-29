@@ -11,65 +11,39 @@
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --navy: #0a1628;
-            --deep-blue: #0d2137;
             --blue-600: #2563eb;
-            --teal-500: #0891b2;
-            --teal-300: #22d3ee;
-            --white: #ffffff;
+            --blue-700: #1d4ed8;
+            --blue-50: #eff6ff;
+            --teal-600: #0891b2;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
             --gray-300: #cbd5e1;
             --gray-400: #94a3b8;
             --gray-500: #64748b;
+            --gray-700: #334155;
+            --gray-900: #0f172a;
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at top right, #1e3a8a 0%, #0a1628 50%, #06111f 100%);
+            background: #f8fafc;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
-            color: var(--white);
+            color: var(--gray-900);
             position: relative;
-            overflow: hidden;
-        }
-        body::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(8, 145, 178, 0.25) 0%, transparent 70%);
-            top: -150px;
-            left: -150px;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-        }
-        body::after {
-            content: '';
-            position: absolute;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
-            bottom: -100px;
-            right: -100px;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
         }
         .login-container {
             width: 100%;
-            max-width: 460px;
-            position: relative;
-            z-index: 2;
+            max-width: 450px;
         }
         .login-card {
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 24px;
+            background: #ffffff;
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
             padding: 44px 38px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
         }
         .login-brand {
             text-align: center;
@@ -82,7 +56,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 26px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--gray-900);
             text-decoration: none;
             margin-bottom: 12px;
         }
@@ -92,34 +66,34 @@
             border-radius: 10px;
         }
         .brand-logo span span {
-            color: var(--teal-300);
+            color: var(--blue-600);
         }
         .login-brand h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 20px;
-            font-weight: 600;
-            color: var(--gray-300);
+            font-weight: 700;
+            color: var(--gray-900);
         }
         .login-brand p {
-            color: var(--gray-400);
+            color: var(--gray-500);
             font-size: 13.5px;
             margin-top: 4px;
         }
         .alert-danger {
-            background: rgba(239, 68, 68, 0.15);
-            border: 1px solid rgba(239, 68, 68, 0.35);
-            color: #fca5a5;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
             padding: 12px 16px;
-            border-radius: 12px;
+            border-radius: 10px;
             margin-bottom: 22px;
             font-size: 13.5px;
         }
         .alert-info {
-            background: rgba(8, 145, 178, 0.15);
-            border: 1px solid rgba(34, 211, 238, 0.3);
-            color: #a5f3fc;
+            background: var(--blue-50);
+            border: 1px solid #bfdbfe;
+            color: var(--blue-600);
             padding: 12px 16px;
-            border-radius: 12px;
+            border-radius: 10px;
             margin-bottom: 22px;
             font-size: 13.5px;
         }
@@ -129,32 +103,28 @@
         .form-label {
             display: block;
             font-size: 13px;
-            font-weight: 500;
-            color: var(--gray-300);
+            font-weight: 600;
+            color: var(--gray-700);
             margin-bottom: 8px;
-        }
-        .input-wrapper {
-            position: relative;
         }
         .form-control {
             width: 100%;
-            background: rgba(10, 22, 40, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 13px 16px;
-            color: var(--white);
+            background: #ffffff;
+            border: 1px solid var(--gray-300);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: var(--gray-900);
             font-family: 'Inter', sans-serif;
             font-size: 14.5px;
             outline: none;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
         }
         .form-control:focus {
-            border-color: var(--teal-300);
-            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.25);
-            background: rgba(13, 33, 55, 0.95);
+            border-color: var(--blue-600);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
         .form-control::placeholder {
-            color: var(--gray-500);
+            color: var(--gray-400);
         }
         .form-meta {
             display: flex;
@@ -167,48 +137,47 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--gray-400);
+            color: var(--gray-600);
             cursor: pointer;
         }
         .remember-checkbox input {
             cursor: pointer;
-            accent-color: var(--teal-500);
+            accent-color: var(--blue-600);
         }
         .btn-login {
             width: 100%;
-            background: linear-gradient(135deg, var(--teal-500) 0%, var(--blue-600) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-600) 100%);
+            color: #ffffff;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 14px;
             font-family: 'Space Grotesk', sans-serif;
             font-size: 15.5px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.25s ease;
-            box-shadow: 0 10px 25px rgba(8, 145, 178, 0.35);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
         .btn-login:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-            box-shadow: 0 15px 35px rgba(8, 145, 178, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
         }
         .demo-cred-hint {
             margin-top: 24px;
             padding: 14px;
-            border-radius: 12px;
-            background: rgba(30, 58, 138, 0.25);
-            border: 1px dashed rgba(59, 130, 246, 0.3);
+            border-radius: 10px;
+            background: var(--blue-50);
+            border: 1px dashed #bfdbfe;
             text-align: center;
             font-size: 12.5px;
-            color: var(--gray-300);
+            color: var(--gray-700);
         }
         .demo-cred-hint strong {
-            color: var(--teal-300);
+            color: var(--blue-600);
             cursor: pointer;
             text-decoration: underline;
         }
@@ -217,13 +186,13 @@
             margin-top: 20px;
         }
         .back-to-site a {
-            color: var(--gray-400);
+            color: var(--gray-500);
             font-size: 13px;
             text-decoration: none;
             transition: color 0.2s;
         }
         .back-to-site a:hover {
-            color: var(--white);
+            color: var(--gray-900);
         }
     </style>
 </head>
@@ -244,7 +213,7 @@
             <div class="alert-info">{{ session('info') }}</div>
         @endif
 
-        @if($errors->any())
+        @if(isset($errors) && $errors->any())
             <div class="alert-danger">
                 {{ $errors->first() }}
             </div>
@@ -255,16 +224,12 @@
 
             <div class="form-group">
                 <label class="form-label" for="email">Admin Email</label>
-                <div class="input-wrapper">
-                    <input type="email" id="email" name="email" class="form-control" placeholder="admin@sofinish.co.uk" value="{{ old('email', 'admin@sofinish.co.uk') }}" required autofocus>
-                </div>
+                <input type="email" id="email" name="email" class="form-control" placeholder="admin@sofinish.co.uk" value="{{ old('email', 'admin@sofinish.co.uk') }}" required autofocus>
             </div>
 
             <div class="form-group">
                 <label class="form-label" for="password">Password</label>
-                <div class="input-wrapper">
-                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" value="admin123" required>
-                </div>
+                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" value="admin123" required>
             </div>
 
             <div class="form-meta">

@@ -13,18 +13,18 @@
         margin-bottom: 30px;
     }
     .kpi-card {
-        background: var(--card-bg);
+        background: #ffffff;
         border: 1px solid var(--card-border);
         border-radius: var(--radius-md);
         padding: 22px 24px;
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(16px);
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .kpi-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(34, 211, 238, 0.35);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
     }
     .kpi-card::before {
         content: '';
@@ -33,8 +33,7 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, var(--teal-400), var(--blue-600));
-        opacity: 0.8;
+        background: linear-gradient(90deg, var(--blue-600), var(--teal-600));
     }
     .kpi-header {
         display: flex;
@@ -44,8 +43,8 @@
     }
     .kpi-label {
         font-size: 13px;
-        font-weight: 500;
-        color: var(--gray-400);
+        font-weight: 600;
+        color: var(--text-muted);
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
@@ -56,30 +55,30 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(8, 145, 178, 0.12);
-        color: var(--teal-300);
+        background: var(--blue-50);
+        color: var(--blue-600);
     }
     .kpi-value {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 700;
-        color: var(--white);
+        color: var(--text-main);
         line-height: 1.1;
     }
     .kpi-meta {
         font-size: 12px;
-        color: var(--gray-400);
+        color: var(--text-muted);
         margin-top: 6px;
         display: flex;
         align-items: center;
         gap: 6px;
     }
     .kpi-badge {
-        color: var(--emerald-500);
+        color: var(--emerald-600);
         font-weight: 600;
     }
 
-    /* Charts Grid (3 Types of Graphs) */
+    /* Charts Grid */
     .charts-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -92,11 +91,11 @@
         }
     }
     .chart-card {
-        background: var(--card-bg);
+        background: #ffffff;
         border: 1px solid var(--card-border);
         border-radius: var(--radius-md);
         padding: 24px;
-        backdrop-filter: blur(16px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .chart-header {
         display: flex;
@@ -107,19 +106,20 @@
     .chart-header h3 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 16px;
-        font-weight: 600;
-        color: var(--white);
+        font-weight: 700;
+        color: var(--text-main);
         display: flex;
         align-items: center;
         gap: 8px;
     }
     .chart-tag {
-        font-size: 11px;
-        padding: 3px 8px;
+        font-size: 11.5px;
+        font-weight: 600;
+        padding: 3px 9px;
         border-radius: 6px;
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--teal-300);
-        border: 1px solid rgba(34, 211, 238, 0.2);
+        background: var(--blue-50);
+        color: var(--blue-600);
+        border: 1px solid #bfdbfe;
     }
     .chart-container-large {
         position: relative;
@@ -137,23 +137,18 @@
 
     .charts-subgrid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 24px;
         margin-bottom: 30px;
-    }
-    @media (max-width: 900px) {
-        .charts-subgrid {
-            grid-template-columns: 1fr;
-        }
     }
 
     /* Table Section */
     .table-section {
-        background: var(--card-bg);
+        background: #ffffff;
         border: 1px solid var(--card-border);
         border-radius: var(--radius-md);
         padding: 24px;
-        backdrop-filter: blur(16px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .table-toolbar {
         display: flex;
@@ -166,12 +161,12 @@
     .toolbar-title h3 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 17px;
-        font-weight: 600;
-        color: var(--white);
+        font-weight: 700;
+        color: var(--text-main);
     }
     .toolbar-title p {
         font-size: 12.5px;
-        color: var(--gray-400);
+        color: var(--text-muted);
         margin-top: 2px;
     }
     .search-form {
@@ -180,36 +175,36 @@
         gap: 10px;
     }
     .search-input {
-        background: rgba(10, 22, 40, 0.85);
+        background: #ffffff;
         border: 1px solid var(--card-border);
         border-radius: var(--radius-sm);
-        padding: 8px 14px;
-        color: var(--white);
+        padding: 9px 14px;
+        color: var(--text-main);
         font-size: 13.5px;
         width: 260px;
         outline: none;
         transition: all 0.2s;
     }
     .search-input:focus {
-        border-color: var(--teal-300);
-        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.2);
+        border-color: var(--blue-600);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     }
     .btn-search {
         background: var(--blue-600);
-        color: var(--white);
+        color: #ffffff;
         border: none;
         border-radius: var(--radius-sm);
-        padding: 8px 14px;
+        padding: 9px 16px;
         font-size: 13.5px;
-        font-weight: 500;
+        font-weight: 600;
         cursor: pointer;
         transition: background 0.2s;
     }
     .btn-search:hover {
-        background: var(--blue-700);
+        background: var(--blue-800);
     }
 
-    /* Modern Table */
+    /* Modern Light Table */
     .table-responsive {
         width: 100%;
         overflow-x: auto;
@@ -221,11 +216,11 @@
         font-size: 13.5px;
     }
     .custom-table th {
-        background: rgba(10, 22, 40, 0.9);
-        color: var(--gray-400);
+        background: #f8fafc;
+        color: var(--text-muted);
         text-transform: uppercase;
         font-size: 11.5px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.5px;
         padding: 14px 16px;
         text-align: left;
@@ -233,23 +228,23 @@
     }
     .custom-table td {
         padding: 14px 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        color: var(--gray-200);
+        border-bottom: 1px solid #f1f5f9;
+        color: #334155;
         vertical-align: middle;
     }
     .custom-table tr:hover td {
-        background: rgba(255, 255, 255, 0.02);
+        background: #f8fafc;
     }
 
-    /* IP & Flag pill */
+    /* IP & Badge Pills */
     .ip-badge {
         font-family: monospace;
         font-weight: 600;
-        color: var(--teal-300);
-        background: rgba(8, 145, 178, 0.12);
+        color: #0369a1;
+        background: #f0f9ff;
         padding: 3px 8px;
         border-radius: 6px;
-        border: 1px solid rgba(34, 211, 238, 0.2);
+        border: 1px solid #bae6fd;
         display: inline-flex;
         align-items: center;
         gap: 6px;
@@ -259,13 +254,10 @@
         align-items: center;
         gap: 8px;
     }
-    .flag-icon {
-        font-size: 16px;
-    }
     .visit-count-badge {
-        background: rgba(37, 99, 235, 0.15);
-        color: #93c5fd;
-        border: 1px solid rgba(59, 130, 246, 0.3);
+        background: var(--blue-50);
+        color: var(--blue-600);
+        border: 1px solid #bfdbfe;
         padding: 4px 10px;
         border-radius: 999px;
         font-weight: 700;
@@ -277,22 +269,22 @@
         align-items: center;
         gap: 5px;
         font-size: 12.5px;
-        color: var(--gray-300);
+        color: #475569;
     }
     .time-cell {
         font-size: 12px;
-        color: var(--gray-400);
+        color: var(--text-muted);
     }
     .time-cell strong {
-        color: var(--gray-200);
+        color: var(--text-main);
         display: block;
         font-size: 13px;
     }
 
     /* Journey Button */
     .btn-journey {
-        background: linear-gradient(135deg, var(--teal-500) 0%, var(--blue-600) 100%);
-        color: var(--white);
+        background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-600) 100%);
+        color: #ffffff;
         border: none;
         border-radius: var(--radius-sm);
         padding: 7px 14px;
@@ -303,12 +295,12 @@
         align-items: center;
         gap: 6px;
         transition: all 0.2s ease;
-        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
     }
     .btn-journey:hover {
         transform: translateY(-1px);
-        filter: brightness(1.1);
-        box-shadow: 0 6px 18px rgba(8, 145, 178, 0.4);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        filter: brightness(1.05);
     }
 
     /* Modal Backdrop & Container */
@@ -316,8 +308,8 @@
         display: none;
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(8px);
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(4px);
         z-index: 999;
         align-items: center;
         justify-content: center;
@@ -327,15 +319,15 @@
         display: flex;
     }
     .modal-content {
-        background: #0d1e33;
-        border: 1px solid rgba(34, 211, 238, 0.3);
+        background: #ffffff;
+        border: 1px solid var(--card-border);
         border-radius: var(--radius-lg);
         width: 100%;
         max-width: 680px;
         max-height: 90vh;
         display: flex;
         flex-direction: column;
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         overflow: hidden;
         animation: modalFadeIn 0.25s ease-out;
     }
@@ -345,7 +337,7 @@
     }
     .modal-header {
         padding: 22px 28px;
-        background: rgba(10, 22, 40, 0.95);
+        background: #f8fafc;
         border-bottom: 1px solid var(--card-border);
         display: flex;
         align-items: center;
@@ -354,7 +346,7 @@
     .modal-header h3 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 18px;
-        color: var(--white);
+        color: var(--text-main);
         display: flex;
         align-items: center;
         gap: 10px;
@@ -362,15 +354,15 @@
     .btn-close-modal {
         background: transparent;
         border: none;
-        color: var(--gray-400);
-        font-size: 20px;
+        color: var(--text-muted);
+        font-size: 22px;
         cursor: pointer;
         padding: 4px;
         line-height: 1;
         transition: color 0.2s;
     }
     .btn-close-modal:hover {
-        color: var(--white);
+        color: var(--text-main);
     }
     .modal-body {
         padding: 24px 28px;
@@ -378,7 +370,7 @@
         flex: 1;
     }
     .visitor-profile-card {
-        background: rgba(15, 23, 42, 0.7);
+        background: #f8fafc;
         border: 1px solid var(--card-border);
         border-radius: var(--radius-sm);
         padding: 16px 20px;
@@ -390,17 +382,18 @@
     .profile-item label {
         display: block;
         font-size: 11px;
+        font-weight: 600;
         text-transform: uppercase;
-        color: var(--gray-400);
+        color: var(--text-muted);
         margin-bottom: 2px;
     }
     .profile-item span {
         font-size: 13.5px;
-        font-weight: 600;
-        color: var(--teal-300);
+        font-weight: 700;
+        color: var(--blue-600);
     }
 
-    /* Chronological Timeline */
+    /* Chronological Timeline - Light Theme */
     .timeline {
         position: relative;
         padding-left: 28px;
@@ -415,8 +408,7 @@
         bottom: 8px;
         left: 9px;
         width: 2px;
-        background: linear-gradient(180deg, var(--teal-400), var(--blue-600));
-        opacity: 0.4;
+        background: #cbd5e1;
     }
     .timeline-step {
         position: relative;
@@ -428,9 +420,9 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: var(--navy-dark);
-        border: 2px solid var(--teal-400);
-        color: var(--teal-300);
+        background: #ffffff;
+        border: 2px solid var(--blue-600);
+        color: var(--blue-600);
         font-size: 10px;
         font-weight: 700;
         display: flex;
@@ -438,14 +430,15 @@
         justify-content: center;
     }
     .timeline-content {
-        background: rgba(10, 22, 40, 0.75);
+        background: #f8fafc;
         border: 1px solid var(--card-border);
         border-radius: var(--radius-sm);
         padding: 14px 18px;
-        transition: border-color 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s;
     }
     .timeline-content:hover {
-        border-color: rgba(34, 211, 238, 0.3);
+        border-color: #bfdbfe;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
     }
     .timeline-top {
         display: flex;
@@ -456,21 +449,22 @@
     .page-path {
         font-family: monospace;
         font-size: 13.5px;
-        font-weight: 600;
-        color: #93c5fd;
+        font-weight: 700;
+        color: var(--blue-600);
     }
     .step-time {
         font-size: 11.5px;
-        color: var(--gray-400);
+        color: var(--text-muted);
     }
     .step-title {
         font-size: 13px;
-        color: var(--gray-200);
+        color: #1e293b;
         margin-bottom: 4px;
+        font-weight: 600;
     }
     .step-referrer {
         font-size: 11.5px;
-        color: var(--gray-500);
+        color: var(--text-muted);
         word-break: break-all;
     }
 </style>
@@ -489,14 +483,14 @@
         </div>
         <div class="kpi-value">{{ number_format($totalUniqueVisitors) }}</div>
         <div class="kpi-meta">
-            <span class="kpi-badge">100% Unique</span> Across distinct IP addresses
+            <span class="kpi-badge">100% Unique</span> Distinct IP addresses tracked
         </div>
     </div>
 
     <div class="kpi-card">
         <div class="kpi-header">
             <span class="kpi-label">Total Visits Sessions</span>
-            <div class="kpi-icon">
+            <div class="kpi-icon" style="background: var(--teal-50); color: var(--teal-600);">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
         </div>
@@ -509,7 +503,7 @@
     <div class="kpi-card">
         <div class="kpi-header">
             <span class="kpi-label">Total Page Views</span>
-            <div class="kpi-icon">
+            <div class="kpi-icon" style="background: #f0fdf4; color: #16a34a;">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
         </div>
@@ -522,7 +516,7 @@
     <div class="kpi-card">
         <div class="kpi-header">
             <span class="kpi-label">Today's Visitors</span>
-            <div class="kpi-icon">
+            <div class="kpi-icon" style="background: #fefce8; color: #ca8a04;">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
         </div>
@@ -535,19 +529,18 @@
     <div class="kpi-card">
         <div class="kpi-header">
             <span class="kpi-label">Inquiries Received</span>
-            <div class="kpi-icon" style="color: #60a5fa; background: rgba(37,99,235,0.12);">
+            <div class="kpi-icon" style="background: #fef2f2; color: #dc2626;">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
         </div>
         <div class="kpi-value">{{ number_format($totalInquiries) }}</div>
         <div class="kpi-meta">
-            <span style="color: #f87171; font-weight: 600;">{{ $unreadInquiries }} unread</span> &bull; <a href="{{ route('admin.inquiries') }}" style="color:var(--teal-300);">View Inquiries →</a>
+            <span style="color: #dc2626; font-weight: 600;">{{ $unreadInquiries }} unread</span> &bull; <a href="{{ route('admin.inquiries') }}" style="color:var(--blue-600); font-weight:600;">View Inquiries →</a>
         </div>
     </div>
 </div>
 
 <!-- Graphs Section (3 Types of Interactive Graphs) -->
-<!-- Graph 1 & Graph 2 -->
 <div class="charts-grid">
     <!-- Chart 1: Line / Area Chart -->
     <div class="chart-card">
@@ -580,7 +573,7 @@
 
 <!-- Graph 3: Horizontal Bar Chart -->
 <div class="charts-subgrid">
-    <div class="chart-card" style="grid-column: 1 / -1;">
+    <div class="chart-card">
         <div class="chart-header">
             <h3>
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
@@ -605,7 +598,7 @@
             <input type="text" name="search" class="search-input" placeholder="Search IP, Country, Browser..." value="{{ $search }}">
             <button type="submit" class="btn-search">Search</button>
             @if($search)
-                <a href="{{ route('admin.dashboard') }}" style="color:var(--gray-400); font-size:13px; text-decoration:none;">Clear</a>
+                <a href="{{ route('admin.dashboard') }}" style="color:var(--text-muted); font-size:13px; text-decoration:none;">Clear</a>
             @endif
         </form>
     </div>
@@ -634,10 +627,10 @@
                         </td>
                         <td>
                             <div class="location-cell">
-                                <span class="flag-icon">📍</span>
+                                <span style="font-size: 15px;">📍</span>
                                 <div>
-                                    <strong style="color: #ffffff; display: block;">{{ $visitor->city ?? 'Unknown' }}</strong>
-                                    <span style="color: var(--gray-400); font-size: 11.5px;">{{ $visitor->country ?? 'Global' }}</span>
+                                    <strong style="color: var(--text-main); display: block;">{{ $visitor->city ?? 'Unknown' }}</strong>
+                                    <span style="color: var(--text-muted); font-size: 11.5px;">{{ $visitor->country ?? 'Global' }}</span>
                                 </div>
                             </div>
                         </td>
@@ -648,8 +641,8 @@
                                 @else
                                     <span>💻</span>
                                 @endif
-                                <span>{{ $visitor->browser ?? 'Browser' }}</span>
-                                <span style="color: var(--gray-500); font-size: 11.5px;">({{ $visitor->operating_system ?? 'OS' }})</span>
+                                <strong style="color: var(--text-main);">{{ $visitor->browser ?? 'Browser' }}</strong>
+                                <span style="color: var(--text-muted); font-size: 11.5px;">({{ $visitor->operating_system ?? 'OS' }})</span>
                             </div>
                         </td>
                         <td>
@@ -678,7 +671,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--gray-400);">
+                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
                             No visitor records found matching your filter.
                         </td>
                     </tr>
@@ -726,7 +719,7 @@
 
             <!-- Steps timeline -->
             <div class="timeline" id="journeyTimeline">
-                <div style="text-align: center; color: var(--gray-400); padding: 20px;">
+                <div style="text-align: center; color: var(--text-muted); padding: 20px;">
                     Loading journey details...
                 </div>
             </div>
@@ -745,12 +738,12 @@
     const trendViews = {!! json_encode($chartViews) !!};
 
     const gradientVisitors = ctxTrend.createLinearGradient(0, 0, 0, 260);
-    gradientVisitors.addColorStop(0, 'rgba(8, 145, 178, 0.45)');
-    gradientVisitors.addColorStop(1, 'rgba(8, 145, 178, 0.0)');
+    gradientVisitors.addColorStop(0, 'rgba(37, 99, 235, 0.2)');
+    gradientVisitors.addColorStop(1, 'rgba(37, 99, 235, 0.0)');
 
     const gradientViews = ctxTrend.createLinearGradient(0, 0, 0, 260);
-    gradientViews.addColorStop(0, 'rgba(37, 99, 235, 0.35)');
-    gradientViews.addColorStop(1, 'rgba(37, 99, 235, 0.0)');
+    gradientViews.addColorStop(0, 'rgba(6, 182, 212, 0.18)');
+    gradientViews.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
 
     new Chart(ctxTrend, {
         type: 'line',
@@ -760,25 +753,25 @@
                 {
                     label: 'Unique Visitors',
                     data: trendVisitors,
-                    borderColor: '#22d3ee',
+                    borderColor: '#2563eb',
                     backgroundColor: gradientVisitors,
                     borderWidth: 2.5,
                     fill: true,
                     tension: 0.35,
-                    pointBackgroundColor: '#22d3ee',
+                    pointBackgroundColor: '#2563eb',
                     pointRadius: 3,
                     pointHoverRadius: 6
                 },
                 {
                     label: 'Page Views',
                     data: trendViews,
-                    borderColor: '#60a5fa',
+                    borderColor: '#0891b2',
                     backgroundColor: gradientViews,
                     borderWidth: 2,
                     borderDash: [4, 4],
                     fill: true,
                     tension: 0.35,
-                    pointBackgroundColor: '#60a5fa',
+                    pointBackgroundColor: '#0891b2',
                     pointRadius: 3,
                     pointHoverRadius: 6
                 }
@@ -789,26 +782,26 @@
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    labels: { color: '#cbd5e1', font: { family: 'Inter', size: 12 } }
+                    labels: { color: '#334155', font: { family: 'Inter', size: 12, weight: '600' } }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(10, 22, 40, 0.95)',
+                    backgroundColor: '#0f172a',
                     titleColor: '#ffffff',
-                    bodyColor: '#cbd5e1',
-                    borderColor: 'rgba(34, 211, 238, 0.3)',
+                    bodyColor: '#e2e8f0',
+                    borderColor: '#e2e8f0',
                     borderWidth: 1,
                     padding: 10
                 }
             },
             scales: {
                 x: {
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: { color: '#94a3b8', font: { family: 'Inter', size: 11 } }
+                    grid: { color: 'rgba(0, 0, 0, 0.04)' },
+                    ticks: { color: '#64748b', font: { family: 'Inter', size: 11 } }
                 },
                 y: {
                     beginAtZero: true,
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: { precision: 0, color: '#94a3b8', font: { family: 'Inter', size: 11 } }
+                    grid: { color: 'rgba(0, 0, 0, 0.04)' },
+                    ticks: { precision: 0, color: '#64748b', font: { family: 'Inter', size: 11 } }
                 }
             }
         }
@@ -826,14 +819,15 @@
             datasets: [{
                 data: browserCounts.length > 0 ? browserCounts : [1],
                 backgroundColor: [
-                    '#0891b2',
                     '#2563eb',
-                    '#38bdf8',
+                    '#0891b2',
+                    '#3b82f6',
                     '#10b981',
                     '#f59e0b',
                     '#8b5cf6'
                 ],
-                borderWidth: 0,
+                borderWidth: 2,
+                borderColor: '#ffffff',
                 hoverOffset: 6
             }]
         },
@@ -844,7 +838,7 @@
             plugins: {
                 legend: {
                     position: 'bottom',
-                    labels: { color: '#cbd5e1', font: { family: 'Inter', size: 11.5 }, boxWidth: 12 }
+                    labels: { color: '#334155', font: { family: 'Inter', size: 11.5, weight: '500' }, boxWidth: 12 }
                 }
             }
         }
@@ -862,8 +856,8 @@
             datasets: [{
                 label: 'Page Views',
                 data: pageCounts,
-                backgroundColor: 'rgba(8, 145, 178, 0.8)',
-                borderColor: '#22d3ee',
+                backgroundColor: 'rgba(37, 99, 235, 0.85)',
+                borderColor: '#2563eb',
                 borderWidth: 1,
                 borderRadius: 6
             }]
@@ -875,22 +869,21 @@
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: 'rgba(10, 22, 40, 0.95)',
+                    backgroundColor: '#0f172a',
                     titleColor: '#ffffff',
-                    bodyColor: '#cbd5e1',
-                    borderColor: 'rgba(34, 211, 238, 0.3)',
-                    borderWidth: 1
+                    bodyColor: '#e2e8f0',
+                    padding: 8
                 }
             },
             scales: {
                 x: {
                     beginAtZero: true,
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: { precision: 0, color: '#94a3b8' }
+                    grid: { color: 'rgba(0, 0, 0, 0.04)' },
+                    ticks: { precision: 0, color: '#64748b' }
                 },
                 y: {
                     grid: { display: false },
-                    ticks: { color: '#cbd5e1', font: { family: 'monospace', size: 12 } }
+                    ticks: { color: '#334155', font: { family: 'monospace', size: 12 } }
                 }
             }
         }
@@ -902,7 +895,7 @@
     function openJourneyModal(visitorId) {
         modal.classList.add('active');
         const timeline = document.getElementById('journeyTimeline');
-        timeline.innerHTML = '<div style="text-align: center; color: var(--gray-400); padding: 30px;">Loading route journey...</div>';
+        timeline.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 30px;">Loading route journey...</div>';
 
         fetch(`/admin/visitor/${visitorId}/journey`)
             .then(res => res.json())
@@ -916,7 +909,7 @@
                     document.getElementById('profileDevice').textContent = `${v.browser} on ${v.operating_system}`;
 
                     if (data.journey.length === 0) {
-                        timeline.innerHTML = '<div style="text-align: center; color: var(--gray-400); padding: 20px;">No individual page hits recorded for this visitor yet.</div>';
+                        timeline.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 20px;">No individual page hits recorded for this visitor yet.</div>';
                         return;
                     }
 
@@ -930,9 +923,9 @@
                                         <span class="page-path">${step.path}</span>
                                         <span class="step-time">${step.time_ago} &bull; ${step.time}</span>
                                     </div>
-                                    <div class="step-title"><strong>Page:</strong> ${step.title}</div>
+                                    <div class="step-title">${step.title}</div>
                                     <div class="step-referrer">
-                                        <span style="color:var(--gray-400);">Referrer:</span> ${step.referrer}
+                                        <span style="color:var(--text-muted);">Referrer:</span> ${step.referrer}
                                     </div>
                                 </div>
                             </div>
@@ -941,11 +934,11 @@
 
                     timeline.innerHTML = html;
                 } else {
-                    timeline.innerHTML = '<div style="color: #f87171; text-align: center;">Failed to load journey details.</div>';
+                    timeline.innerHTML = '<div style="color: #ef4444; text-align: center;">Failed to load journey details.</div>';
                 }
             })
             .catch(err => {
-                timeline.innerHTML = '<div style="color: #f87171; text-align: center;">Error fetching visitor journey.</div>';
+                timeline.innerHTML = '<div style="color: #ef4444; text-align: center;">Error fetching visitor journey.</div>';
             });
     }
 

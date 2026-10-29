@@ -6,42 +6,16 @@
 @section('extra_css')
 <style>
     .contact-page {
-        padding: 140px 0 100px;
-        background: linear-gradient(145deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
-        color: var(--white);
+        padding: 130px 0 100px;
+        background: #ffffff;
+        color: var(--navy);
         position: relative;
-        overflow: hidden;
     }
-    .contact-page::before {
-        content: '';
-        position: absolute;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(8, 145, 178, 0.18) 0%, rgba(30, 58, 138, 0.05) 70%, transparent 100%);
-        top: -100px;
-        right: -100px;
-        border-radius: 50%;
-        filter: blur(80px);
-        pointer-events: none;
-    }
-    .contact-page::after {
-        content: '';
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
-        bottom: 50px;
-        left: -150px;
-        border-radius: 50%;
-        filter: blur(90px);
-        pointer-events: none;
-    }
+    
     .contact-header {
         text-align: center;
-        max-width: 780px;
-        margin: 0 auto 60px;
-        position: relative;
-        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto 50px;
     }
     .contact-badge {
         display: inline-flex;
@@ -49,9 +23,9 @@
         gap: 8px;
         padding: 6px 16px;
         border-radius: var(--radius-full);
-        background: rgba(8, 145, 178, 0.15);
-        border: 1px solid rgba(34, 211, 238, 0.3);
-        color: var(--teal-300);
+        background: var(--blue-50);
+        border: 1px solid var(--blue-200);
+        color: var(--blue-600);
         font-size: 13px;
         font-weight: 600;
         letter-spacing: 0.5px;
@@ -60,18 +34,19 @@
     }
     .contact-header h1 {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        font-size: clamp(2.2rem, 4.5vw, 3.4rem);
         font-weight: 700;
         line-height: 1.15;
+        color: var(--navy);
         margin-bottom: 18px;
     }
     .contact-header h1 span {
-        background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
+        background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-500) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     .contact-header p {
-        color: var(--gray-300);
+        color: var(--gray-600);
         font-size: 1.1rem;
         line-height: 1.6;
     }
@@ -81,8 +56,6 @@
         grid-template-columns: 1fr 1.25fr;
         gap: 40px;
         align-items: start;
-        position: relative;
-        z-index: 2;
     }
     @media (max-width: 991px) {
         .contact-grid {
@@ -92,24 +65,23 @@
 
     /* Left Info Card */
     .contact-info-panel {
-        background: rgba(15, 23, 42, 0.65);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #ffffff;
+        border: 1px solid var(--gray-200);
         border-radius: var(--radius-lg);
         padding: 40px;
-        backdrop-filter: blur(16px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
     }
     .contact-info-panel h3 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 1.5rem;
-        margin-bottom: 24px;
-        color: var(--white);
+        margin-bottom: 20px;
+        color: var(--navy);
     }
     .contact-methods {
         display: flex;
         flex-direction: column;
         gap: 24px;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
     .contact-method-item {
         display: flex;
@@ -120,44 +92,44 @@
         width: 48px;
         height: 48px;
         border-radius: var(--radius-md);
-        background: rgba(8, 145, 178, 0.15);
-        border: 1px solid rgba(34, 211, 238, 0.25);
+        background: var(--blue-50);
+        border: 1px solid var(--blue-100);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--teal-300);
+        color: var(--blue-600);
         flex-shrink: 0;
     }
     .contact-method-detail label {
         display: block;
         font-size: 12px;
-        color: var(--gray-400);
+        color: var(--gray-500);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         margin-bottom: 4px;
     }
     .contact-method-detail a, .contact-method-detail span {
-        color: var(--white);
+        color: var(--navy);
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         text-decoration: none;
         transition: color 0.2s;
     }
     .contact-method-detail a:hover {
-        color: var(--teal-300);
+        color: var(--blue-600);
     }
 
     .trust-guarantee-card {
-        background: rgba(30, 58, 138, 0.25);
-        border: 1px solid rgba(59, 130, 246, 0.25);
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
         border-radius: var(--radius-md);
         padding: 24px;
     }
     .trust-guarantee-card h4 {
         font-size: 15px;
         font-weight: 700;
-        color: var(--blue-200);
-        margin-bottom: 12px;
+        color: var(--navy);
+        margin-bottom: 14px;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -168,14 +140,14 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
     .trust-guarantee-card li {
         font-size: 13.5px;
-        color: var(--gray-300);
+        color: var(--gray-700);
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
     }
     .trust-guarantee-card li svg {
         color: var(--emerald-500);
@@ -184,21 +156,20 @@
 
     /* Right Form Card */
     .contact-form-panel {
-        background: rgba(15, 23, 42, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #ffffff;
+        border: 1px solid var(--gray-200);
         border-radius: var(--radius-lg);
         padding: 44px;
-        backdrop-filter: blur(20px);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
     }
     .contact-form-panel h3 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 1.6rem;
         margin-bottom: 8px;
-        color: var(--white);
+        color: var(--navy);
     }
     .contact-form-panel p.form-subtitle {
-        color: var(--gray-400);
+        color: var(--gray-500);
         font-size: 14px;
         margin-bottom: 30px;
     }
@@ -219,36 +190,35 @@
     .form-label {
         display: block;
         font-size: 13.5px;
-        font-weight: 500;
-        color: var(--gray-200);
+        font-weight: 600;
+        color: var(--gray-800);
         margin-bottom: 8px;
     }
     .form-label .required {
-        color: #f87171;
+        color: #ef4444;
     }
     .form-input, .form-select, .form-textarea {
         width: 100%;
-        background: rgba(10, 22, 40, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: #ffffff;
+        border: 1px solid var(--gray-300);
         border-radius: var(--radius-sm);
         padding: 12px 16px;
-        color: var(--white);
+        color: var(--gray-900);
         font-family: 'Inter', sans-serif;
         font-size: 14.5px;
         transition: all 0.25s ease;
         outline: none;
     }
     .form-input:focus, .form-select:focus, .form-textarea:focus {
-        border-color: var(--teal-400);
-        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.25);
-        background: rgba(13, 33, 55, 0.95);
+        border-color: var(--blue-500);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     }
     .form-input::placeholder, .form-textarea::placeholder {
-        color: var(--gray-500);
+        color: var(--gray-400);
     }
     .form-select option {
-        background: var(--navy);
-        color: var(--white);
+        background: #ffffff;
+        color: var(--gray-900);
     }
     .form-textarea {
         resize: vertical;
@@ -256,9 +226,9 @@
     }
 
     .alert-success {
-        background: rgba(16, 185, 129, 0.18);
-        border: 1px solid rgba(16, 185, 129, 0.4);
-        color: #a7f3d0;
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        color: #065f46;
         padding: 16px 20px;
         border-radius: var(--radius-md);
         margin-bottom: 25px;
@@ -268,16 +238,16 @@
         font-size: 14.5px;
     }
     .alert-danger {
-        background: rgba(239, 68, 68, 0.15);
-        border: 1px solid rgba(239, 68, 68, 0.35);
-        color: #fca5a5;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #991b1b;
         padding: 14px 18px;
         border-radius: var(--radius-md);
         margin-bottom: 25px;
         font-size: 14px;
     }
     .invalid-feedback {
-        color: #f87171;
+        color: #ef4444;
         font-size: 12.5px;
         margin-top: 5px;
         display: block;
@@ -289,7 +259,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        background: linear-gradient(135deg, var(--teal-500) 0%, var(--blue-600) 100%);
+        background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-500) 100%);
         color: var(--white);
         font-family: 'Space Grotesk', sans-serif;
         font-size: 16px;
@@ -299,12 +269,12 @@
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(8, 145, 178, 0.3);
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
     }
     .btn-submit-inquiry:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 35px rgba(8, 145, 178, 0.45);
-        filter: brightness(1.1);
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+        filter: brightness(1.05);
     }
 </style>
 @endsection
@@ -316,7 +286,7 @@
         <div class="contact-header fade-up">
             <span class="contact-badge">Direct Communication &bull; 24h Response</span>
             <h1>Let's Build Something <br><span>That Transforms Your Business</span></h1>
-            <p>Book a free, confidential discovery call. We'll examine your technical goals, recommend the right architecture, and deliver a fixed-scope roadmap within 5 business days.</p>
+            <p>Book a free, confidential discovery call. We'll examine your technical goals, recommend the right architecture, and deliver a fixed-scope proposal within 5 business days.</p>
         </div>
 
         <!-- Grid -->
@@ -324,7 +294,7 @@
             <!-- Left Info Panel -->
             <div class="contact-info-panel fade-left">
                 <h3>Get in Touch Directly</h3>
-                <p style="color: var(--gray-300); font-size: 14px; line-height: 1.6; margin-bottom: 30px;">
+                <p style="color: var(--gray-600); font-size: 14px; line-height: 1.6; margin-bottom: 30px;">
                     Have questions about our technology stack or previous SME case studies? Our UK-based solution architects are always happy to chat.
                 </p>
 
@@ -397,7 +367,7 @@
                     </div>
                 @endif
 
-                @if($errors->any())
+                @if(isset($errors) && $errors->any())
                     <div class="alert-danger">
                         <strong>Please check the form for errors:</strong>
                         <ul style="margin: 6px 0 0 18px;">
@@ -477,7 +447,7 @@
                         <span>Send Inquiry & Request Discovery Call</span>
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
-                    <p style="text-align: center; color: var(--gray-400); font-size: 12.5px; margin-top: 14px;">
+                    <p style="text-align: center; color: var(--gray-500); font-size: 12.5px; margin-top: 14px;">
                         🔒 All inquiries are protected under mutual NDA. We never share your data.
                     </p>
                 </form>

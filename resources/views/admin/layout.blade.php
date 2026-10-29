@@ -8,32 +8,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    <!-- Chart.js for high-fidelity interactive graphs -->
+    <!-- Chart.js for interactive graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --navy-dark: #070f1e;
-            --navy: #0a1628;
-            --deep-blue: #0d2137;
-            --card-bg: rgba(15, 23, 42, 0.75);
-            --card-border: rgba(255, 255, 255, 0.09);
+            --bg-page: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
             --blue-800: #1e3a8a;
             --blue-600: #2563eb;
-            --blue-400: #60a5fa;
-            --teal-500: #0891b2;
-            --teal-400: #06b6d4;
-            --teal-300: #22d3ee;
+            --blue-500: #3b82f6;
+            --blue-100: #dbeafe;
+            --blue-50: #eff6ff;
+            --teal-600: #0891b2;
+            --teal-500: #06b6d4;
+            --teal-50: #ecfeff;
+            --emerald-600: #059669;
             --emerald-500: #10b981;
-            --amber-500: #f59e0b;
+            --emerald-50: #ecfdf5;
             --red-500: #ef4444;
-            --white: #ffffff;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
+            --red-50: #fef2f2;
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
@@ -41,16 +39,16 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #070f1e;
-            color: var(--gray-100);
+            background: var(--bg-page);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
         }
 
-        /* Sidebar */
+        /* Sidebar - Clean Light / White Theme */
         .admin-sidebar {
             width: 270px;
-            background: linear-gradient(180deg, #0a1628 0%, #06111f 100%);
+            background: #ffffff;
             border-right: 1px solid var(--card-border);
             display: flex;
             flex-direction: column;
@@ -60,6 +58,7 @@
             left: 0;
             z-index: 100;
             transition: all 0.3s ease;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
         }
         .sidebar-brand {
             padding: 24px 20px;
@@ -77,7 +76,8 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: var(--navy);
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
         }
         .sidebar-logo img {
             width: 100%;
@@ -88,10 +88,10 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 19px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text-main);
         }
         .sidebar-brand-name span {
-            color: var(--teal-300);
+            color: var(--blue-600);
         }
 
         .sidebar-nav {
@@ -104,10 +104,10 @@
         }
         .nav-label {
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            color: var(--gray-500);
+            color: var(--text-light);
             padding: 10px 12px 6px;
         }
         .sidebar-link {
@@ -116,7 +116,7 @@
             gap: 12px;
             padding: 11px 14px;
             border-radius: var(--radius-sm);
-            color: var(--gray-300);
+            color: #475569;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -125,29 +125,29 @@
         .sidebar-link svg {
             width: 19px;
             height: 19px;
-            color: var(--gray-400);
+            color: #64748b;
             transition: color 0.2s ease;
         }
         .sidebar-link:hover {
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--blue-600);
+            background: var(--blue-50);
         }
         .sidebar-link:hover svg {
-            color: var(--teal-300);
+            color: var(--blue-600);
         }
         .sidebar-link.active {
-            color: var(--white);
-            background: linear-gradient(135deg, rgba(8, 145, 178, 0.25) 0%, rgba(37, 99, 235, 0.25) 100%);
-            border: 1px solid rgba(34, 211, 238, 0.3);
+            color: var(--blue-600);
+            background: var(--blue-50);
+            border: 1px solid #bfdbfe;
             font-weight: 600;
         }
         .sidebar-link.active svg {
-            color: var(--teal-300);
+            color: var(--blue-600);
         }
         .sidebar-badge {
             margin-left: auto;
             background: var(--blue-600);
-            color: var(--white);
+            color: #ffffff;
             font-size: 11.5px;
             font-weight: 700;
             padding: 2px 8px;
@@ -155,7 +155,7 @@
         }
         .sidebar-badge.unread {
             background: var(--red-500);
-            box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
         }
 
         .sidebar-footer {
@@ -164,7 +164,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(0, 0, 0, 0.2);
+            background: #f8fafc;
         }
         .user-info {
             display: flex;
@@ -175,27 +175,27 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--teal-500), var(--blue-600));
+            background: linear-gradient(135deg, var(--blue-600), var(--teal-600));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
             font-weight: 700;
-            color: var(--white);
+            color: #ffffff;
         }
         .user-meta h4 {
             font-size: 13px;
             font-weight: 600;
-            color: var(--white);
+            color: var(--text-main);
         }
         .user-meta span {
             font-size: 11px;
-            color: var(--gray-400);
+            color: var(--text-muted);
         }
         .btn-logout {
             background: transparent;
             border: none;
-            color: var(--gray-400);
+            color: #94a3b8;
             cursor: pointer;
             padding: 6px;
             border-radius: 6px;
@@ -205,7 +205,7 @@
         }
         .btn-logout:hover {
             color: var(--red-500);
-            background: rgba(239, 68, 68, 0.1);
+            background: var(--red-50);
         }
 
         /* Main Content */
@@ -215,7 +215,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: #070f1e;
+            background: var(--bg-page);
         }
         .admin-topbar {
             height: 72px;
@@ -223,22 +223,22 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10, 22, 40, 0.7);
-            backdrop-filter: blur(12px);
+            background: #ffffff;
             border-bottom: 1px solid var(--card-border);
             position: sticky;
             top: 0;
             z-index: 50;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
         }
         .topbar-title h1 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 20px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text-main);
         }
         .topbar-title p {
             font-size: 12.5px;
-            color: var(--gray-400);
+            color: var(--text-muted);
         }
         .topbar-actions {
             display: flex;
@@ -250,23 +250,22 @@
             align-items: center;
             gap: 8px;
             padding: 6px 14px;
-            background: rgba(16, 185, 129, 0.12);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: var(--emerald-50);
+            border: 1px solid #a7f3d0;
             border-radius: 999px;
             font-size: 12px;
             font-weight: 600;
-            color: #34d399;
+            color: var(--emerald-600);
         }
         .pulse-dot {
             width: 8px;
             height: 8px;
-            background: #10b981;
+            background: var(--emerald-500);
             border-radius: 50%;
-            box-shadow: 0 0 8px #10b981;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
             70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
@@ -278,16 +277,17 @@
             padding: 8px 14px;
             border-radius: var(--radius-sm);
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
-            color: var(--gray-200);
-            background: rgba(255, 255, 255, 0.06);
+            color: #334155;
+            background: #ffffff;
             border: 1px solid var(--card-border);
             transition: all 0.2s;
         }
         .btn-topbar:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: var(--white);
+            background: #f1f5f9;
+            color: var(--blue-600);
+            border-color: #cbd5e1;
         }
 
         .admin-content {
@@ -306,9 +306,9 @@
             gap: 10px;
         }
         .toast-success {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.35);
-            color: #6ee7b7;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
         }
 
         @media (max-width: 991px) {
