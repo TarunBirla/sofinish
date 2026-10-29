@@ -107,7 +107,6 @@
                     <li><a href="tel:+442000000000">+44 20 0000 0000</a></li>
                     <li><a href="{{ route('contact') }}">London, United Kingdom</a></li>
                     <li><a href="{{ route('contact') }}">Book Discovery Call</a></li>
-                    <li><a href="{{ route('admin.login') }}" style="color:var(--teal-300);">Admin Portal →</a></li>
                 </ul>
             </div>
         </div>
