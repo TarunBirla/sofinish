@@ -311,6 +311,71 @@
             color: #065f46;
         }
 
+        /* Custom Pagination */
+        .custom-pagination-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 20px;
+            margin-top: 10px;
+            border-top: 1px solid var(--card-border);
+        }
+        .pagination-info {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .pagination-info .font-semibold {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .pagination-list {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .page-item {
+            display: inline-block;
+        }
+        .page-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 34px;
+            padding: 0 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        a.page-link:hover {
+            color: var(--blue-600);
+            border-color: var(--blue-600);
+            background: var(--blue-50);
+        }
+        .page-item.active .page-link {
+            background: var(--blue-600);
+            color: #ffffff;
+            border-color: var(--blue-600);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+        }
+        .page-item.disabled .page-link {
+            color: #94a3b8;
+            background: #f8fafc;
+            border-color: #e2e8f0;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
         @media (max-width: 991px) {
             .admin-sidebar {
                 transform: translateX(-100%);

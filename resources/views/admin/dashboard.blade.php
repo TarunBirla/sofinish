@@ -680,8 +680,8 @@
         </table>
     </div>
 
-    <div style="margin-top: 20px;">
-        {{ $visitors->links() }}
+    <div>
+        {{ $visitors->links('pagination.custom') }}
     </div>
 </div>
 

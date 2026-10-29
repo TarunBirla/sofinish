@@ -270,8 +270,8 @@
         </table>
     </div>
 
-    <div style="margin-top: 20px;">
-        {{ $inquiries->links() }}
+    <div>
+        {{ $inquiries->links('pagination.custom') }}
     </div>
 </div>
 
