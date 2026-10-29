@@ -361,6 +361,12 @@
             @endif
         </a>
 
+        <span class="nav-label">Account & Security</span>
+        <a href="{{ route('admin.profile') }}" class="sidebar-link {{ request()->routeIs('admin.profile*') ? 'active' : '' }}">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Admin Profile</span>
+        </a>
+
         <span class="nav-label">System & Live Tools</span>
         <a href="{{ route('setup.db') }}" target="_blank" class="sidebar-link">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7"/><path d="M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4"/><path d="M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4"/><path d="M4 12c0 2.21 3.58 4 8 4s8-1.79 8-4"/></svg>
@@ -373,7 +379,7 @@
     </div>
 
     <div class="sidebar-footer">
-        <div class="user-info">
+        <a href="{{ route('admin.profile') }}" class="user-info" style="text-decoration: none;">
             <div class="user-avatar">
                 {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
             </div>
@@ -381,7 +387,7 @@
                 <h4>{{ Auth::user()->name ?? 'Admin User' }}</h4>
                 <span>{{ Auth::user()->email ?? 'admin@sofinish.co.uk' }}</span>
             </div>
-        </div>
+        </a>
         <form action="{{ route('admin.logout') }}" method="POST" style="margin: 0;">
             @csrf
             <button type="submit" class="btn-logout" title="Sign Out">

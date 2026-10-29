@@ -38,5 +38,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/inquiries', [InquiryController::class, 'index'])->name('inquiries');
         Route::post('/inquiries/{id}/status', [InquiryController::class, 'updateStatus'])->name('inquiries.status');
         Route::delete('/inquiries/{id}', [InquiryController::class, 'destroy'])->name('inquiries.destroy');
+
+        // Admin Profile & Security
+        Route::get('/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('profile');
+        Route::post('/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'updateProfile'])->name('profile.update');
+        Route::post('/profile/password', [\App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('profile.password');
     });
 });
