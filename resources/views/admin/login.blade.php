@@ -126,6 +126,37 @@
         .form-control::placeholder {
             color: var(--gray-400);
         }
+
+        /* Password input group with Eye Icon */
+        .password-input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-input-group .form-control {
+            padding-right: 46px;
+        }
+        .btn-toggle-eye {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #64748b;
+            cursor: pointer;
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            transition: color 0.2s, background 0.2s;
+        }
+        .btn-toggle-eye:hover {
+            color: var(--blue-600);
+            background: #f1f5f9;
+        }
+
         .form-meta {
             display: flex;
             align-items: center;
@@ -224,16 +255,30 @@
 
             <div class="form-group">
                 <label class="form-label" for="password">Password</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    class="form-control" 
-                    placeholder="Enter your password" 
-                    value="" 
-                    autocomplete="new-password" 
-                    required
-                >
+                <div class="password-input-group">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-control" 
+                        placeholder="Enter your password" 
+                        value="" 
+                        autocomplete="new-password" 
+                        required
+                    >
+                    <button type="button" class="btn-toggle-eye" id="togglePasswordBtn" onclick="togglePasswordVisibility()" title="Show/Hide Password" aria-label="Toggle password visibility">
+                        <!-- Eye Icon (Password Hidden) -->
+                        <svg id="eyeIcon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <!-- Eye-Off Icon (Password Visible) -->
+                        <svg id="eyeOffIcon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: none;">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                            <line x1="1" y1="1" x2="23" y2="23"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <div class="form-meta">
@@ -254,6 +299,24 @@
         <a href="{{ route('home') }}">← Return to Frontend Website</a>
     </div>
 </div>
+
+<script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+        const eyeOffIcon = document.getElementById('eyeOffIcon');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIcon.style.display = 'none';
+            eyeOffIcon.style.display = 'block';
+        } else {
+            passwordInput.type = 'password';
+            eyeIcon.style.display = 'block';
+            eyeOffIcon.style.display = 'none';
+        }
+    }
+</script>
 
 </body>
 </html>
