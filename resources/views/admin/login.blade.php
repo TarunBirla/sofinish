@@ -224,12 +224,12 @@
 
             <div class="form-group">
                 <label class="form-label" for="email">Admin Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="admin@sofinish.co.uk" value="{{ old('email', 'admin@sofinish.co.uk') }}" required autofocus>
+                <input type="email" id="email" name="email" class="form-control" placeholder="admin@sofinish.co.uk" value="" required autofocus>
             </div>
 
             <div class="form-group">
                 <label class="form-label" for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" value="admin123" required>
+                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" value="" required>
             </div>
 
             <div class="form-meta">
