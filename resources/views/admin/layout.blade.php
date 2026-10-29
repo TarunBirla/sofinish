@@ -368,10 +368,7 @@
         </a>
 
         <span class="nav-label">System & Live Tools</span>
-        <a href="{{ route('setup.db') }}" target="_blank" class="sidebar-link">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7"/><path d="M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4"/><path d="M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4"/><path d="M4 12c0 2.21 3.58 4 8 4s8-1.79 8-4"/></svg>
-            <span>Run DB Setup / Status</span>
-        </a>
+        
         <a href="{{ route('home') }}" target="_blank" class="sidebar-link">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             <span>View Live Website</span>

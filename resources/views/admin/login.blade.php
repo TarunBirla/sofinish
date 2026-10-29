@@ -245,11 +245,7 @@
             </button>
         </form>
 
-        <div class="demo-cred-hint">
-            Default credentials: <br>
-            Email: <strong onclick="document.getElementById('email').value='admin@sofinish.co.uk'">admin@sofinish.co.uk</strong> &bull; 
-            Pass: <strong onclick="document.getElementById('password').value='admin123'">admin123</strong>
-        </div>
+        
     </div>
 
     <div class="back-to-site">
